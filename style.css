@@ -1,8 +1,5 @@
-/* -------------------
-   COLOR PALETTE
-------------------- */
 :root {
-  /* HEX */
+  /* HEX COLORS */
   --platinum: #eef0f2ff;
   --coral-glow: #ff8b64ff;
   --mustard: #ffd864ff;
@@ -10,7 +7,7 @@
   --electric-sapphire: #6464ffff;
   --cyan-glow: #64ffffff;
 
-  /* HSL */
+  /* HSL COLORS */
   --platinum-hsl: hsla(210, 13%, 94%, 1);
   --coral-glow-hsl: hsla(15, 100%, 70%, 1);
   --mustard-hsl: hsla(45, 100%, 70%, 1);
@@ -32,7 +29,7 @@
 body {
   background: #0f172a;
   color: #e5e7eb;
-  padding-bottom: 60px; /* ensures content isn't hidden behind sticky footer */
+  padding-bottom: 60px; /* prevent content from being hidden behind sticky footer */
 }
 
 /* -------------------
@@ -81,22 +78,31 @@ body {
   padding: 40px;
 }
 
-.card {
-  background: #111827;
-  border-radius: 16px;
-  padding: 20px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+/* HERO IMAGE & OVERLAY */
+.hero .image-card {
+  position: relative; /* needed for overlay */
 }
 
-.image-card img {
+.hero .image-card img {
   width: 100%;
   border-radius: 12px;
+  display: block;
 }
 
-.caption {
-  font-size: 12px;
-  color: #9ca3af;
-  margin-top: 10px;
+.hero .image-card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 139, 100, 0.3),   /* coral-glow */
+    rgba(178, 100, 255, 0.3)    /* lavender-purple */
+  );
+  pointer-events: none; /* allows clicking through overlay */
 }
 
 .hero .content {
@@ -106,11 +112,6 @@ body {
   justify-content: center;
 }
 
-.hero .image-card {
-  flex: 1 1 400px;
-}
-
-/* PROFILE AVATAR */
 .avatar {
   width: 80px;
   height: 80px;
@@ -147,6 +148,24 @@ h2 {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
+}
+
+.card {
+  background: #111827;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.image-card img {
+  width: 100%;
+  border-radius: 12px;
+}
+
+.caption {
+  font-size: 12px;
+  color: var(--mustard);
+  margin-top: 10px;
 }
 
 .btn {
