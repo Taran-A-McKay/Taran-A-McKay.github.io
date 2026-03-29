@@ -21,11 +21,12 @@
 body {
   background: var(--platinum);
   color: #1f2937;
+  padding-top: 80px;
   padding-bottom: 60px;
 }
 
 /* -------------------
-   NAVBAR
+   NAVBAR (STICKY)
 ------------------- */
 .navbar {
   display: flex;
@@ -33,6 +34,10 @@ body {
   align-items: center;
   padding: 20px 40px;
   background: var(--electric-sapphire);
+
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 .logo {
@@ -54,7 +59,6 @@ body {
   border-radius: 8px;
 }
 
-/* ✅ NEW: navbar separators match footer */
 .nav-sep {
   color: var(--platinum);
   margin: 0 10px;
@@ -80,17 +84,14 @@ body {
 .hero .image-card img {
   width: 100%;
   border-radius: 12px;
-  display: block;
 }
 
 .hero .content {
   flex: 1 1 400px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
 }
 
-/* ✅ UPDATED: thicker + new color */
 .avatar {
   width: 80px;
   height: 80px;
@@ -144,7 +145,6 @@ h1 {
   padding: 40px;
 }
 
-/* ✅ NEW: larger header + spacing */
 .section-title {
   font-size: 36px;
   margin-bottom: 40px;
@@ -152,8 +152,16 @@ h1 {
 
 .project-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 300px));
+  justify-content: center;
+  gap: 24px;
+}
+
+.card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  cursor: pointer;
 }
 
 .card {
@@ -161,13 +169,30 @@ h1 {
   border-radius: 16px;
   padding: 20px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  position: relative;
 }
 
-/* ✅ NEW: clickable cards without ugly link styling */
-.card-link {
-  text-decoration: none;
-  color: inherit;
-  display: block;
+/* gradient outline */
+.card::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: 18px;
+  background: linear-gradient(90deg, var(--coral-glow), var(--lavender-purple));
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  z-index: -1;
+}
+
+/* hover effect */
+.card:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+}
+
+.card:hover::before {
+  opacity: 1;
 }
 
 .caption {
@@ -177,7 +202,7 @@ h1 {
 }
 
 /* -------------------
-   STICKY FOOTER
+   FOOTER
 ------------------- */
 .footer {
   position: fixed;
@@ -189,7 +214,6 @@ h1 {
   text-align: center;
   padding: 12px 0;
   font-size: 14px;
-  z-index: 1000;
 }
 
 .footer a {
