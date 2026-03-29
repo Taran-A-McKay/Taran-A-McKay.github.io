@@ -1,215 +1,78 @@
-:root {
-  /* HEX COLORS */
-  --platinum: #eef0f2ff;
-  --coral-glow: #ff8b64ff;
-  --mustard: #ffd864ff;
-  --lavender-purple: #b264ffff;
-  --electric-sapphire: #6464ffff;
-  --cyan-glow: #64ffffff;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Taran Allan-McKay Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
 
-/* -------------------
-   GLOBAL STYLES
-------------------- */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Segoe UI", Tahoma, sans-serif;
-}
+  <!-- NAVBAR -->
+  <div class="navbar">
+    <div class="logo">Taran Allan-McKay</div>
+    <div class="nav-links">
+      <a href="index.html" class="active">Home</a>
+      <span class="spacer">|</span>
+      <a href="projects.html">Projects</a>
+      <span class="spacer">|</span>
+      <a href="about.html">About Me</a>
+    </div>
+  </div>
 
-body {
-  background: var(--platinum);
-  color: #1f2937;
-  padding-bottom: 60px; /* prevent content hidden behind sticky footer */
-}
+  <!-- HERO / HOME -->
+  <div class="hero-section">
+    <div class="hero">
+      <div class="image-card">
+        <img src="Images/Hero2.jpg" alt="Main hero image">
+      </div>
 
-/* -------------------
-   NAVBAR
-------------------- */
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 40px;
-  background: var(--electric-sapphire);
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
+      <div class="content">
+        <img class="avatar" src="Images/Avatar2.jpg" alt="Profile picture">
+        <h1>Hi! I’m Taran 👋</h1>
+        <div class="subtitle">Computational Cognitive Science graduate & AI enthusiast</div>
+        <div class="description">
+          [Placeholder for short About Me blurb – a few sentences summarizing you for the home page]
+        </div>
+      </div>
+    </div>
+  </div>
 
-.logo {
-  font-weight: 700;
-  font-size: 20px;
-  color: var(--platinum);
-}
+  <!-- RESEARCH AT A GLANCE -->
+  <div id="projects" class="section">
+    <h2>Research at a Glance</h2>
+    <div class="project-grid">
+      <div class="card" onclick="window.location.href='projects/Codenames.html'">
+        <div class="card-title">Codenames as an Interactive Test for Large Language Model Theory of Mind</div>
+        <div class="caption">Undergraduate thesis exploring LLM theory of mind in interactive settings.</div>
+      </div>
+      <div class="card" onclick="window.location.href='projects/VMAS.html'">
+        <div class="card-title">VMAS Multiagent RL Experiments</div>
+        <div class="caption">Class project using VMAS to run experiments in multiagent reinforcement learning environments.</div>
+      </div>
+      <div class="card" onclick="window.location.href='projects/AISafety.html'">
+        <div class="card-title">AI Safety Research Assistant</div>
+        <div class="caption">Worked on research for the book *Uncontrollable* by Darren McKee.</div>
+      </div>
+      <div class="card" onclick="window.location.href='projects/Bluffing.html'">
+        <div class="card-title">To Bluff or Not to Bluff</div>
+        <div class="caption">Class project upgrading a reinforcement learning bluffing game using deep neural networks.</div>
+      </div>
+      <div class="card" onclick="window.location.href='projects/SnakeWorld.html'">
+        <div class="card-title">Snake World</div>
+        <div class="caption">Independent summer research project on perverse incentives in RL agents.</div>
+      </div>
+    </div>
+  </div>
 
-.nav-links a {
-  text-decoration: none;
-  color: var(--platinum);
-  font-size: 14px;
-  margin: 0 10px;
-}
+  <!-- FOOTER -->
+  <div class="footer">
+    <a href="index.html">Home</a>
+    <span class="spacer">|</span>
+    <a href="projects.html">Projects</a>
+    <span class="spacer">|</span>
+    <a href="about.html">About Me</a>
+  </div>
 
-.nav-links a.active {
-  background: var(--cyan-glow);
-  color: #1f2937;
-  padding: 6px 12px;
-  border-radius: 8px;
-}
-
-.spacer {
-  color: var(--platinum);
-  margin: 0 5px;
-}
-
-/* -------------------
-   HERO
-------------------- */
-.hero-section {
-  background: #ffffff33; /* light backing */
-  padding: 40px 0;
-}
-
-.hero {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 40px;
-  max-width: 1100px;
-  margin: auto;
-  align-items: center;
-}
-
-.hero .image-card {
-  flex: 1 1 400px;
-}
-
-.hero .image-card img {
-  width: 100%;
-  border-radius: 12px;
-  display: block;
-}
-
-.hero .content {
-  flex: 1 1 400px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.avatar {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  margin-bottom: 15px;
-  border: 4px solid var(--coral-glow);
-}
-
-h1 {
-  font-size: 36px;
-  margin-bottom: 15px;
-  background: linear-gradient(90deg, var(--coral-glow), var(--lavender-purple));
-  -webkit-background-clip: text;
-  color: transparent;
-}
-
-.subtitle {
-  color: #374151;
-  margin-bottom: 20px;
-}
-
-.description {
-  font-size: 14px;
-  line-height: 1.6;
-  color: #4b5563;
-  margin-bottom: 20px;
-}
-
-/* -------------------
-   PROJECTS
-------------------- */
-.section {
-  max-width: 1100px;
-  margin: auto;
-  padding: 40px;
-}
-
-.section h2 {
-  font-size: 28px;
-  margin-bottom: 30px;
-}
-
-.project-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  justify-items: center;
-}
-
-.card {
-  background: var(--platinum);
-  border-radius: 16px;
-  padding: 20px;
-  width: 300px;
-  cursor: pointer;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.card:hover {
-  transform: scale(1.03);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-  border: 2px solid var(--coral-glow);
-}
-
-.card-title {
-  font-weight: 600;
-  margin-bottom: 10px;
-}
-
-.caption {
-  font-size: 12px;
-  color: var(--mustard);
-}
-
-/* -------------------
-   STICKY FOOTER
-------------------- */
-.footer {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  background: var(--electric-sapphire);
-  color: var(--platinum);
-  text-align: center;
-  padding: 12px 0;
-  font-size: 14px;
-  z-index: 1000;
-}
-
-.footer a {
-  color: var(--platinum);
-  text-decoration: none;
-  margin: 0 8px;
-}
-
-.footer a:hover {
-  text-decoration: underline;
-}
-
-.footer .spacer {
-  color: var(--platinum);
-}
-
-/* -------------------
-   RESPONSIVE
-------------------- */
-@media (max-width: 900px) {
-  .hero {
-    flex-direction: column;
-  }
-  .project-grid {
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  }
-}
+</body>
+</html>
