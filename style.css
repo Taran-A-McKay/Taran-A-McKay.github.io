@@ -9,9 +9,7 @@
   --card-text-grey: #4b5563;
 }
 
-/* -------------------
-   GLOBAL STYLES
-------------------- */
+/* GLOBAL STYLES */
 * {
   margin: 0;
   padding: 0;
@@ -25,9 +23,7 @@ body {
   padding-bottom: 60px; /* prevent content hidden behind sticky footer */
 }
 
-/* -------------------
-   NAVBAR
-------------------- */
+/* NAVBAR */
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -63,9 +59,7 @@ body {
   color: var(--platinum);
 }
 
-/* -------------------
-   HERO
-------------------- */
+/* HERO */
 .hero {
   display: flex;
   flex-wrap: wrap;
@@ -135,9 +129,7 @@ h1 {
   margin-bottom: 20px;
 }
 
-/* -------------------
-   PROJECTS
-------------------- */
+/* PROJECTS */
 .section {
   max-width: 1100px;
   margin: auto;
@@ -147,13 +139,13 @@ h1 {
 .section-header {
   font-size: 28px;
   margin-bottom: 25px;
-  text-align: center; /* centered header */
+  text-align: center;
 }
 
 .project-grid {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center; /* centers the cards as a group */
+  justify-content: center; /* center the cards */
   gap: 20px;
 }
 
@@ -173,9 +165,8 @@ h1 {
   box-shadow: 0 10px 30px rgba(0,0,0,0.2);
   border: 2px solid;
   border-image-slice: 1;
-  border-width: 2px;
   border-image-source: linear-gradient(90deg, var(--coral-glow), var(--lavender-purple));
-  border-radius: 16px; /* ensures hover border is rounded like the card */
+  border-radius: 16px; /* rounded edges for hover outline */
 }
 
 .card h3 {
@@ -187,9 +178,7 @@ h1 {
   color: var(--card-text-grey);
 }
 
-/* -------------------
-   STICKY FOOTER
-------------------- */
+/* FOOTER */
 .footer {
   position: fixed;
   bottom: 0;
@@ -217,9 +206,7 @@ h1 {
   color: var(--platinum);
 }
 
-/* -------------------
-   RESPONSIVE
-------------------- */
+/* RESPONSIVE */
 @media (max-width: 900px) {
   .hero {
     flex-direction: column;
