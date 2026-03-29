@@ -1,86 +1,205 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Taran Allan-McKay Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
+:root {
+  /* HEX COLORS */
+  --platinum: #eef0f2ff;
+  --coral-glow: #ff8b64ff;
+  --mustard: #ffd864ff;
+  --lavender-purple: #b264ffff;
+  --electric-sapphire: #6464ffff;
+  --cyan-glow: #64ffffff;
+}
 
-  <!-- NAVBAR -->
-  <div class="navbar">
-    <div class="logo">Taran Allan-McKay</div>
-    <div class="nav-links">
-      <a href="#research">Research & Projects</a>
-      <span class="divider">|</span>
-      <a href="projects.html">Projects</a>
-      <span class="divider">|</span>
-      <a href="about.html">About Me</a>
-    </div>
-  </div>
+/* -------------------
+   GLOBAL STYLES
+------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, sans-serif;
+}
 
-  <!-- HERO / HOME -->
-  <div class="hero">
-    <!-- LEFT IMAGE -->
-    <div class="image-card">
-      <img src="Images/Hero2.jpg" alt="Main hero image">
-    </div>
+body {
+  background: var(--platinum);
+  color: #1f2937;
+  padding-bottom: 60px; /* prevent content hidden behind sticky footer */
+}
 
-    <!-- RIGHT CONTENT -->
-    <div class="content">
-      <!-- PROFILE AVATAR -->
-      <img class="avatar" src="Images/Avatar2.jpg" alt="Profile picture">
+/* -------------------
+   NAVBAR
+------------------- */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background: var(--electric-sapphire);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
 
-      <h1>Hi! I’m Taran 👋</h1>
-      <div class="subtitle">Computational Cognitive Science graduate & AI enthusiast</div>
-      <div class="description">
-        [Placeholder for short About Me blurb – a few sentences summarizing you for the home page]
-      </div>
-    </div>
-  </div>
+.logo {
+  font-weight: 700;
+  font-size: 20px;
+  color: var(--platinum);
+}
 
-  <!-- RESEARCH AT A GLANCE -->
-  <div id="research" class="section">
-    <h2>Research at a Glance</h2>
-    <div class="project-grid">
+.nav-links a {
+  text-decoration: none;
+  color: var(--platinum);
+  font-size: 14px;
+  margin: 0 8px;
+}
 
-      <a href="projects/codenames.html" class="card">
-        <div class="caption"><strong>Codenames as an Interactive Test for Large Language Model Theory of Mind</strong></div>
-        <div class="description">My undergraduate thesis exploring how LLMs perform on interactive theory of mind tasks.</div>
-      </a>
+.nav-links a.active {
+  background: var(--cyan-glow);
+  color: #1f2937;
+  padding: 6px 12px;
+  border-radius: 8px;
+}
 
-      <a href="projects/marl.html" class="card">
-        <div class="caption"><strong>Multiagent Reinforcement Learning Experiments</strong></div>
-        <div class="description">Class project using VMAS to run experiments in a multiagent RL environment.</div>
-      </a>
+.separator {
+  color: var(--platinum);
+}
 
-      <a href="projects/ai_safety.html" class="card">
-        <div class="caption"><strong>Research Assistant on AI Safety</strong></div>
-        <div class="description">Assisted research for Darren McKee's book <em>Uncontrollable: The Threat of Artificial Superintelligence</em>.</div>
-      </a>
+/* -------------------
+   HERO
+------------------- */
+.hero-back {
+  background: #f5f5f5;
+  padding: 40px 0;
+}
 
-      <a href="projects/bluffing.html" class="card">
-        <div class="caption"><strong>To Bluff or Not to Bluff</strong></div>
-        <div class="description">Class project (upgraded from RL to neural nets) on deep RL agents in bluffing game environments.</div>
-      </a>
+.hero {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  max-width: 1100px;
+  margin: auto;
+  align-items: center;
+}
 
-      <a href="projects/snake_world.html" class="card">
-        <div class="caption"><strong>Snake World</strong></div>
-        <div class="description">Independent summer research project exploring perverse incentives in RL agents.</div>
-      </a>
+.hero .image-card {
+  flex: 1 1 400px;
+}
 
-    </div>
-  </div>
+.hero .image-card img {
+  width: 100%;
+  border-radius: 12px;
+  display: block;
+}
 
-  <!-- STICKY FOOTER -->
-  <div class="footer">
-    <a href="https://github.com/Taran-A-McKay" target="_blank" rel="noopener noreferrer">GitHub</a>
-    <span class="divider">|</span>
-    <a href="https://www.linkedin.com/in/taran-allan-mckay-4691a7168/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-    <span class="divider">|</span>
-    <a href="PDFs/Taran Allan-McKay CV.pdf" target="_blank" rel="noopener noreferrer">CV</a>
-  </div>
+.hero .content {
+  flex: 1 1 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 
-</body>
-</html>
+.avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-bottom: 15px;
+  border: 4px solid var(--coral-glow);
+}
+
+h1 {
+  font-size: 36px;
+  margin-bottom: 15px;
+  background: linear-gradient(90deg, var(--coral-glow), var(--lavender-purple));
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.subtitle {
+  color: #374151;
+  margin-bottom: 20px;
+}
+
+.description {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #4b5563;
+  margin-bottom: 20px;
+}
+
+/* -------------------
+   RESEARCH AT A GLANCE
+------------------- */
+.section {
+  max-width: 1100px;
+  margin: auto;
+  padding: 40px;
+}
+
+.section h2 {
+  font-size: 28px;
+  margin-bottom: 30px;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  justify-items: center;
+}
+
+.card {
+  background: var(--platinum);
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  width: 100%;
+  max-width: 300px;
+  cursor: pointer;
+}
+
+.card h3 {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.card .caption {
+  font-size: 12px;
+  color: var(--mustard);
+}
+
+/* -------------------
+   FOOTER
+------------------- */
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: var(--electric-sapphire);
+  color: var(--platinum);
+  text-align: center;
+  padding: 12px 0;
+  font-size: 14px;
+  z-index: 1000;
+}
+
+.footer a {
+  color: var(--platinum);
+  text-decoration: none;
+  margin: 0 8px;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+/* -------------------
+   RESPONSIVE
+------------------- */
+@media (max-width: 900px) {
+  .hero {
+    flex-direction: column;
+  }
+
+  .project-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
